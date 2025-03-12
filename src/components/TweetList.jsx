@@ -34,7 +34,14 @@ const TweetList = () => {
       {tweets.length > 0 ? (
         <ul>
           {tweets.map((tweet) => (
-            <li key={tweet.id}>{tweet.text}</li>
+            <li key={tweet.id}>
+              <strong>{tweet.username}</strong>
+              <p>{tweet.text}</p>
+              <p>Beğeni Sayısı: {tweet.likeCount}</p>
+              <p>Retweet Sayısı: {tweet.retweetCount}</p>
+              <p>Yorum Sayısı: {tweet.commentCount}</p>
+              <p>Yorumlar: {tweet.comments}</p>
+            </li>
           ))}
         </ul>
       ) : (
